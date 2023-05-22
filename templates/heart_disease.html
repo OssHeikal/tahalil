@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            background-color: #1f1f1f;
+            font-family: "Roboto Light", "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        select,
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            outline: none; /* Add this line to remove the default outline */
+        }
+
+        select:focus {
+            background-color: #1f1f1f; /* Change the background color when the select is focused */
+        }
+
+        .hint {
+            font-size: 12px;
+            color: #aaa;
+            display: block;
+            margin-bottom: 20px; /* Add margin bottom for spacing */
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #b30000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Disease Prediction</h1>
+        <form action="/predict/heart_disease" method="POST" enctype="application/json>
+            <label for="ST_Slope_Up">ST Slope Up:</label>
+            <select id="ST_Slope_Up" name="ST_Slope_Up">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <span class="hint">Choose whether the ST slope is up during exercise.</span>
+
+            <label for="Oldpeak">Oldpeak:</label>
+            <input type="number" id="Oldpeak" name="Oldpeak" step="0.01" required>
+            <span class="hint">Enter the numeric value of Oldpeak measured in depression.</span>
+
+            <label for="Cholesterol">Cholesterol:</label>
+            <input type="number" id="Cholesterol" name="Cholesterol" required>
+            <span class="hint">Enter the serum cholesterol level in mm/dl.</span>
+
+            <label for="ExerciseAngina_Y">Exercise-Induced Angina:</label>
+            <select id="ExerciseAngina_Y" name="ExerciseAngina_Y">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <span class="hint">Choose whether exercise-induced angina is present.</span>
+
+            <label for="MaxHR">Max Heart Rate:</label>
+            <input type="number" id="MaxHR" name="MaxHR" required>
+            <span class="hint">Enter the maximum heart rate achieved (between 60 and 202).</span>
+
+            <label for="Sex_M">Sex:</label>
+            <select id="Sex_M" name="Sex_M">
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select>
+            <span class="hint">Select the sex of the patient.</span>
+
+            <label for="Age">Age:</label>
+            <input type="number" id="Age" name="Age" required>
+            <span class="hint">Enter the age of the patient in years.</span>
+
+            <label for="RestingBP">Resting Blood Pressure:</label>
+            <input type="number" id="RestingBP" name="RestingBP" required>
+            <span class="hint">Enter the resting blood pressure in mm Hg.</span>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>

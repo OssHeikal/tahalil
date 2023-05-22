@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Predict Diabetes</title>
+    <style>
+        body {
+            background-color: #1f1f1f;
+            font-family: "Roboto Light", "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        select,
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            outline: none; /* Add this line to remove the default outline */
+        }
+
+        select:focus {
+            background-color: #1f1f1f; /* Change the background color when the select is focused */
+        }
+
+        .hint {
+            font-size: 12px;
+            color: #aaa;
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 15px; /* Add margin bottom for spacing */
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+
+        input[type="submit"]:hover {
+            background-color: #b30000;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Predict Diabetes</h1>
+        <form action="/predict_diabetes" method="POST" enctype="application/json>
+            <label for="age">Age:</label>
+            <input type="number" name="age" required>
+            <span class="hint">Hint: Enter the age of the patient in years</span>
+
+            <label for="hypertension">Hypertension:</label>
+            <select name="hypertension" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <span class="hint">Hint: Select if the patient has hypertension</span>
+
+            <label for="heart_disease">Heart Disease:</label>
+            <select name="heart_disease" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <span class="hint">Hint: Select if the patient has heart disease</span>
+
+            <label for="bmi">BMI:</label>
+            <input type="number" name="bmi" step="0.01" required>
+            <span class="hint">Hint: Enter the Body Mass Index (BMI)</span>
+
+            <label for="HbA1c_level">HbA1c Level:</label>
+            <input type="number" name="HbA1c_level" step="0.01" required>
+            <span class="hint">Hint: Enter the HbA1c level</span>
+
+            <label for="blood_glucose_level">Blood Glucose Level:</label>
+            <input type="number" name="blood_glucose_level" step="0.01" required>
+            <span class="hint">Hint: Enter the blood glucose level</span>
+
+            <label for="smoking_history_current">Current Smoking History:</label>
+            <select name="smoking_history_current" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <span class="hint">Hint: Select if the patient has a current smoking history</span>
+
+            <label for="smoking_history_former">Former Smoking History:</label>
+            <select name="smoking_history_former" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <span class="hint">Hint: Select if the patient has a former smoking history</span>
+
+            <label for="gender">Gender:</label>
+            <select name="gender" required>
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select>
+            <span class="hint">Hint: Select the patient's gender</span>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+
+</html>

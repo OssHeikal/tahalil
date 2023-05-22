@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hepatitis C Prediction</title>
+    <style>
+        body {
+            background-color: #1f1f1f;
+            font-family: "Roboto Light", "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .form-row .form-group {
+            flex: 0 0 48%;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        select,
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            outline: none;
+            /* Add this line to remove the default outline */
+        }
+
+        select:focus {
+            background-color: #1f1f1f;
+            /* Change the background color when the select is focused */
+        }
+
+        input[type="submit"] {
+            padding: 15px 30px;
+            background-color: #ff0000;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            animation: scaleButton 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #b30000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hepatitis C Prediction</h1>
+        <form action="/predict/hepatitis_c" method="POST" enctype="application/json">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="alb">ALB:</label>
+                    <input type="number" step="0.01" id="alb" name="alb" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="alp">ALP:</label>
+                    <input type="number" step="0.01" id="alp" name="alp" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="alt">ALT:</label>
+                    <input type="number" step="0.01" id="alt" name="alt" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="ast">AST:</label>
+                    <input type="number" step="0.01" id="ast" name="ast" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="bil">BIL:</label>
+                    <input type="number" step="0.01" id="bil" name="bil" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="che">CHE:</label>
+                    <input type="number" step="0.01" id="che" name="che" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="chol">CHOL:</label>
+                    <input type="number" step="0.01" id="chol" name="chol" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="crea">CREA:</label>
+                    <input type="number" step="0.01" id="crea" name="crea" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ggt">GGT:</label>
+                    <input type="number" step="0.01" id="ggt" name="ggt" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="prot">PROT:</label>
+                    <input type="number" step="0.01" id="prot" name="prot" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sex">Sex:</label>
+                    <select id="sex" name="sex" required>
+                        <option value="0">Female</option>
+                        <option value="1">Male</option>
+                    </select>
+                </div>
+            </div>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+
+</html>

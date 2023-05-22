@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hepatitis B Prediction</title>
+    <style>
+        body {
+            background-color: #1f1f1f;
+            font-family: "Roboto Light", "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        select,
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            outline: none; /* Add this line to remove the default outline */
+        }
+
+        select:focus {
+            background-color: #1f1f1f; /* Change the background color when the select is focused */
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: #ff0000;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            animation: scaleButton 0.3s;
+        }
+
+        button:hover {
+            background-color: #b30000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hepatitis B Prediction</h1>
+        <form action="/predict/hepatitis_b" method="POST" enctype="application/json">
+            <div class="form-group">
+                <label for="surface_antigen">Surface Antigen:</label>
+                <select id="surface_antigen" name="surface_antigen" required>
+                    <option value="1">Positive</option>
+                    <option value="0">Negative</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="surface_antibody">Surface Antibody:</label>
+                <select id="surface_antibody" name="surface_antibody" required>
+                    <option value="1">Positive</option>
+                    <option value="0">Negative</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="core_antibody">Core Antibody:</label>
+                <select id="core_antibody" name="core_antibody" required>
+                    <option value="1">Positive</option>
+                    <option value="0">Negative</option>
+                </select>
+            </div>
+
+            <div class="button-container">
+                <button type="submit">Predict</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

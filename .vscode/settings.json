@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/b63fc1bc-5a0a-43ad-851b-ee6a9b87927f/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/msdocs-python-webapp-quickstart-tahalil",
+    "appService.deploySubpath": "."
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multi Disease Prediction</title>
+    <style>
+        body {
+            background-color: #292929;
+            background-size: cover;
+            font-family: "Roboto Light", "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .choices {
+            margin-top: 30px;
+        }
+
+        .choice {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center; /* Align buttons horizontally */
+        }
+
+        .choice a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #d91002;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            animation: scaleButton 0.3s;
+            width: 400px; /* Set a fixed width for the buttons */
+            box-sizing: border-box; /* Include padding and border in the width calculation */
+        }
+
+        .choice a:hover {
+            background-color: #ff5252;
+        }
+
+        @keyframes scaleButton {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Color Palette */
+        :root {
+            --color-palette-1: #ffbaba;
+            --color-palette-2: #ff7b7b;
+            --color-palette-3: #ff5252;
+            --color-palette-4: #ff0000;
+            --color-palette-5: #a70000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Multi Disease Prediction</h1>
+    <h2>Choose your test</h2>
+    <div class="choices">
+        <div class="choice">
+            <a href="/hepatitis_b">Hepatitis B</a>
+        </div>
+        <div class="choice">
+            <a href="/hepatitis_c">Hepatitis C</a>
+        </div>
+        <div class="choice">
+            <a href="/heart_disease">Heart Disease</a>
+        </div>
+        <div class="choice">
+            <a href="/anemia">Anemia</a>
+        </div>
+        <div class="choice">
+            <a href="/diabetes">Diabetes</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
